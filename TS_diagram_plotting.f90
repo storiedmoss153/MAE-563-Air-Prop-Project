@@ -10,7 +10,7 @@ program TS_diagram_plotting
     real(dp), allocatable :: dummy_array(:,:)
     character(len=50) :: filename
     integer :: num, i, unit, num_fin
-    integer :: case_num = 8
+    integer :: case_num = 7
 
     ! Allocating Data
     allocate(dummy_array(5,3))
