@@ -6,7 +6,7 @@ This project is being used as a learning tool for FORTRAN programming over the s
 ## Scripts for running individual .f90 files
 
 ### Atmosphere Validation File
-This file calculates the Temperature \[K\] and Pressure \[kPa\] from the Isentropic model of the atmosphere and plots them against the data in the [ICAO Standard Atmosphere Data](atmosphere_validation_files/ICAO_Standard_Atmosphere_SI_uints.csv).
+This file calculates the Temperature \[K\] and Pressure \[kPa\] from the Isentropic model of the atmosphere and plots them against the data in the [ICAO Standard Atmosphere Data](AEE-563-Air-Prop-Project/atmosphere_validation_files/ICAO_Standard_Atmosphere_SI_uints.csv).
 
 #### Running module_validation.f90
 ```
