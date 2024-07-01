@@ -6,7 +6,7 @@ set size 0.8125,1
 set origin 0.09375,0
 set datafile separator ","
 unset key
-set grid
+set grid xtics ytics ztics vertical
 
 set xrange reverse
 set xlabel "Combustor Exit\nTotal Temperature, K" offset -1,-1
