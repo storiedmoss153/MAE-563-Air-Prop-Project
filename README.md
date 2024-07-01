@@ -6,7 +6,7 @@ This project is being used as a learning tool for FORTRAN programming over the s
 ## Scripts for running individual .f90 files
 
 ### Module Validation File
-This file is used to validate the modules against the given test cases. The initial case parameters are found in [data_files](data_files).
+This file is used to validate the modules against the given test cases. The initial case parameters are in [data files](data_files).
 
 #### Running module_validation.f90
 ```
@@ -23,7 +23,7 @@ gfortran ./modules/module_1.f90 atmosphere_validation.f90 ./modules/universal_mo
 ./atmosphere_validation
 ```
 ### T-vs-s Diagrams Files
-This file takes in one of the initial case parameter files and calculates and plots the corresponding T-vs-s diagram where straight lines connect States 1-2 and 3-4 while constant pressure curves connect States 2-3 and 4-1.
+This file takes in one of the [initial case parameter files](data_files) and calculates and plots the corresponding T-vs-s diagram where straight lines connect States 1-2 and 3-4 while constant pressure curves connect States 2-3 and 4-1.
 
 #### Running TS_diagram_plotting.f90
 ```
@@ -31,11 +31,17 @@ gfortran ./modules/module_1.f90 ./modules/module_2.f90 ./modules/module_3.f90 ./
 ./TS_plotting
 ```
 
+### Performance Parameters File
+This file calculates and plots the various performance parameters for parts c-h of the project. The file reads one of the [input case files](data_files) for the initial case parameters.
+
 #### Running performance_parameters.f90
 ```
 gfortran ./modules/module_1.f90 ./modules/module_2.f90 ./modules/module_3.f90 ./modules/module_4.f90 ./modules/module_5.f90 ./modules/module_6.f90 ./modules/auxiliary_module.f90 ./modules/universal_module.f90 performance_parameters.f90 -o performance_parameters
 ./performance_parameters
 ```
+
+### Propulsion System Design
+This code completes part I of the project which is the design of the propulsion system by finding two designs, one that optimizes the total thrust and one that optimizes the overall efficiency. This file uses the [case 7 input file](data_files/input_variables_case7.csv) for the majority of the input parameters, with some alternative ones defined in the project manual.
 
 #### Running propulsion_system_design.f90
 ```
