@@ -4,12 +4,13 @@ program atmosphere_validation
     use, intrinsic :: iso_fortran_env, only: sp=>real32, dp=>real64
     implicit none
 
-    character(len=50) :: filename
+    character(len=100) :: filename
     real(dp), allocatable :: z(:), ICAO_data(:,:), ISEN_data(:,:)
     real(dp), allocatable :: ICAO_delta(:,:)
     integer :: ncolumn, nlines, nheadder, i
 
-    filename = '../ICAO_Standard_Atmosphere_SI_units.csv'
+    filename = './atmosphere_validation_files/&
+              &ICAO_Standard_Atmosphere_SI_units.csv'
     ncolumn = 9
     nheadder = 2
     nlines = count_lines(filename,nheadder)
