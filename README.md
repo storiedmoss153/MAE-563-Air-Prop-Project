@@ -5,8 +5,8 @@ This project is being used as a learning tool for FORTRAN programming over the s
 
 ## Scripts for running individual .f90 files
 
-### Atmosphere Validation File
-This file calculates the Temperature \[K\] and Pressure \[kPa\] from the Isentropic model of the atmosphere and plots them against the data in the [ICAO Standard Atmosphere Data](atmosphere_validation_files/ICAO_Standard_Atmosphere_English_units.csv).
+### Module Validation File
+This file is used to validate the modules against the given test cases. The initial case parameters are found in []().
 
 #### Running module_validation.f90
 ```
@@ -14,11 +14,16 @@ gfortran ./modules/module_1.f90 ./modules/module_2.f90 ./modules/module_3.f90 ./
 ./module_validation
 ```
 
+### Atmosphere Validation File
+This file calculates the Temperature \[K\] and Pressure \[kPa\] from the Isentropic model of the atmosphere and plots them against the data in the [ICAO Standard Atmosphere Data](atmosphere_validation_files/ICAO_Standard_Atmosphere_English_units.csv).
+
 #### Running atmospheres_validation.f90
 ```
 gfortran ./modules/module_1.f90 atmosphere_validation.f90 ./modules/universal_module.f90 -o atmosphere_validation
 ./atmosphere_validation
 ```
+### T-vs-s Diagrams Files
+This file takes in one of the initial case parameter files and calculates and plots the corresponding T-vs-s diagram where straight lines connect States 1-2 and 3-4 while constant pressure curves connect States 2-3 and 4-1.
 
 #### Running TS_diagram_plotting.f90
 ```
