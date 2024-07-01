@@ -6,7 +6,7 @@ This project is being used as a learning tool for FORTRAN programming over the s
 ## Scripts for running individual .f90 files
 
 ### Module Validation File
-This file is used to validate the modules against the given test cases. The initial case parameters are found in (data_files).
+This file is used to validate the modules against the given test cases. The initial case parameters are found in [data_files](data_files).
 
 #### Running module_validation.f90
 ```
