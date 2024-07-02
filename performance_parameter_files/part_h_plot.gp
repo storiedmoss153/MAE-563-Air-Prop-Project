@@ -2,7 +2,7 @@
 set term pdf dashed enhanced font "Times,15" size 3.25,2.4375
 set output './performance_parameter_files/part_h_eta_o.pdf'
 unset key
-set xlabel "Mach Number M_2"
+set xlabel "Combustor Inlet Mach"
 set ylabel "Overall Efficiency"
 set grid
 set datafile separator ","
