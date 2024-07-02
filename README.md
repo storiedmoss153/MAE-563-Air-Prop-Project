@@ -1,5 +1,5 @@
 # AEE-563-Air-Prop-Project
-Repository for AEE 563: Introduction to Aircraft Propulsion Theory and Applications Master's Project.
+Repository for MAE 563: Introduction to Aircraft Propulsion Theory and Applications Master's Project.
 
 This project is being used as a learning tool for FORTRAN programming over the summer. It also incorporates gnuplotting for plotting plots. The main goal of this project is to develop an analysis tool for parametric studies of non-ideal ramjet propulsion performance which will then be used to examine how ramjet performance varies across a range of key parameters.
 
