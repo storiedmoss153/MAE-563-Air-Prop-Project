@@ -18,7 +18,7 @@ program propulsion_system_design
     real(dp) :: total_thrust
     real(dp) :: eta_o
 
-    write(filename, '(A, I0, A)') '../data_files/input_variables_case',7,'.csv'
+    write(filename, '(A, I0, A)') 'data_files/input_variables_case',7,'.csv'
     call read_initial_parameters(filename,initial_parameters)
 
     ! Initialize variables to be used in calculations
@@ -49,9 +49,9 @@ program propulsion_system_design
     V1 = dummy_array(7)                                              ! m/s
     deallocate(dummy_array)
 
-    open(newunit=io1,file='test_design_data_1.csv',&
+    open(newunit=io1,file='propulsion_design_files/design_data_1.csv',&
          status='replace',action='write',iostat=ios)
-    open(newunit=io2,file='test_design_data_2.csv',&
+    open(newunit=io2,file='propulsion_design_files/design_data_2.csv',&
          status='replace',action='write',iostat=ios)
     do i = 1,n_M2
         M2 = M2_int + d_M2 * int(i - 1)
@@ -141,5 +141,5 @@ program propulsion_system_design
                  'Total thrust:', design_array_1(n,3),&
                  'Overall Efficiency:', design_array_1(n,4)
     end do
-    call execute_command_line('gnuplot test_design_plot.gp')
+    call execute_command_line('gnuplot propulsion_design_files/design_plot.gp')
 end program propulsion_system_design
