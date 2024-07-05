@@ -11,6 +11,11 @@
 *.o
 *.obj
 
+# Data Files
+*.csv
+!input_variables_case7.csv
+!input_variables_case7.csv
+
 # Precompiled Headers
 *.gch
 *.pch
