@@ -43,10 +43,10 @@ program propulsion_system_design
     ! Calculations from Module 1
     allocate(dummy_array(7))
     dummy_array = M1_all_function(z,M1)
-    p1 = dummy_array(2)                                              ! kPa
-    Tt1 = dummy_array(3)                                             ! K
-    pt1 = dummy_array(4)                                             ! kPa
-    V1 = dummy_array(7)                                              ! m/s
+    p1 = dummy_array(2)                                                 ! kPa
+    Tt1 = dummy_array(3)                                                ! K
+    pt1 = dummy_array(4)                                                ! kPa
+    V1 = dummy_array(7)                                                 ! m/s
     deallocate(dummy_array)
 
     open(newunit=io1,file='propulsion_design_files/design_data_1.csv',&
@@ -60,35 +60,35 @@ program propulsion_system_design
             ! Calculations from Module 2
             allocate(dummy_array(8))
             dummy_array = M2_all_function(Tt1,p1,pt1,M1,M2,eta_d)
-            Tt2 = dummy_array(1)                                     ! K
-            pt2 = dummy_array(3)                                     ! kPa
-            p2 = dummy_array(4)                                      ! kPa
-            delta_s12 = dummy_array(8)                               ! J/kg-K
+            Tt2 = dummy_array(1)                                        ! K
+            pt2 = dummy_array(3)                                        ! kPa
+            p2 = dummy_array(4)                                         ! kPa
+            delta_s12 = dummy_array(8)                                  ! J/kg-K
             deallocate(dummy_array)
 
             ! Calculations from Module 3
             allocate(dummy_array(9))
             dummy_array = M3_all_function(Tt2,Tt3_max,p2,pt2,M2,delta_s12,Tt3)
-            q23 = dummy_array(3)                                     ! MJ/kg
-            pt3 = dummy_array(6)                                     ! kPa
-            delta_s13 = dummy_array(9)                               ! J/kg-K
+            q23 = dummy_array(3)                                        ! MJ/kg
+            pt3 = dummy_array(6)                                        ! kPa
+            delta_s13 = dummy_array(9)                                  ! J/kg-K
             deallocate(dummy_array)
 
             ! Calculations from Module 4
             allocate(dummy_array(11))
             dummy_array = M4_all_function(Tt3,p1,pt3,eta_n,delta_s13,Area_e)
-            pte = dummy_array(2)                                     ! kPa
-            pe = dummy_array(3)                                      ! kPa
-            Tte = dummy_array(4)                                     ! K
-            Ve = dummy_array(8)                                      ! m/s
-            me_dot = dummy_array(9)                                  ! kg/s
-            delta_s1e = dummy_array(11)                              ! J/kg-K
+            pte = dummy_array(2)                                        ! kPa
+            pe = dummy_array(3)                                         ! kPa
+            Tte = dummy_array(4)                                        ! K
+            Ve = dummy_array(8)                                         ! m/s
+            me_dot = dummy_array(9)                                     ! kg/s
+            delta_s1e = dummy_array(11)                                 ! J/kg-K
             deallocate(dummy_array)
 
             ! Calculations from Module 6
             allocate(dummy_array(13))
             dummy_array = M6_all_function(q23,qf,me_dot,Ve,V1,pe,p1,p1,Area_e)
-            total_thrust = dummy_array(6)                            ! N
+            total_thrust = dummy_array(6)                               ! N
             eta_o = dummy_array(12)
             deallocate(dummy_array)
 
@@ -104,20 +104,20 @@ program propulsion_system_design
             allocate(dummy_array(9))
             dummy_array = M3_all_function(Tt2,Tt3_max,p2,pt2,M2,delta_s12)
             Tt3 = dummy_array(1)
-            q23 = dummy_array(3)                                     ! MJ/kg
-            pt3 = dummy_array(6)                                     ! kPa
-            delta_s13 = dummy_array(9)                               ! J/kg-K
+            q23 = dummy_array(3)                                        ! MJ/kg
+            pt3 = dummy_array(6)                                        ! kPa
+            delta_s13 = dummy_array(9)                                  ! J/kg-K
             deallocate(dummy_array)
 
             ! Calculations from Module 4
             allocate(dummy_array(11))
             dummy_array = M4_all_function(Tt3,p1,pt3,eta_n,delta_s13,Area_e)
-            pte = dummy_array(2)                                     ! kPa
-            pe = dummy_array(3)                                      ! kPa
-            Tte = dummy_array(4)                                     ! K
-            Ve = dummy_array(8)                                      ! m/s
-            me_dot = dummy_array(9)                                  ! kg/s
-            delta_s1e = dummy_array(11)                              ! J/kg-K
+            pte = dummy_array(2)                                        ! kPa
+            pe = dummy_array(3)                                         ! kPa
+            Tte = dummy_array(4)                                        ! K
+            Ve = dummy_array(8)                                         ! m/s
+            me_dot = dummy_array(9)                                     ! kg/s
+            delta_s1e = dummy_array(11)                                 ! J/kg-K
             deallocate(dummy_array)
 
             ! Calculations from Module 6
@@ -130,7 +130,6 @@ program propulsion_system_design
         write(io2,"(F20.10, ',', F20.10, ',', F20.10, ',', F20.10)")&
                 M2, Tt3, total_thrust, eta_o
         write(io1,*)
-        ! write(io2,*)
     end do
     close(io1)
     close(io2)
