@@ -20,6 +20,7 @@ set ytics offset 0.5,-0.5
 set ztics offset 0.5,0.5
 
 set colorbox user origin .85,.225 size .05,.55
+set cbtics format "%.0s"
 
 set view 60,70
 set ticslevel 0
@@ -29,6 +30,7 @@ set palette rgb 30,31,32
 splot 'propulsion_design_files/design_data_1.csv' u 2:1:3 w pm3d, \
       'propulsion_design_files/design_data_2.csv' u 2:1:3 w l lc rgb "black"
 set output
+set cbtics format
 unset format z
 
 set output 'propulsion_design_files/eta_o_plot.pdf'
