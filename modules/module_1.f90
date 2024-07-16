@@ -72,12 +72,13 @@ module module_1
         V = M * a
     end function M1_flow_speed
 
-    function M1_all_function(z,M1) result(M1_output_matrix)
+    function M1_all_function(z,M1,cp1_in) result(M1_output_matrix)
         ! Module 1 function that combines all previous functions
         ! and outputs required data for state 1
         implicit none
 
         real(dp), intent(in) :: z, M1
+        real(dp), optional :: cp1_in
         real(dp) :: Temp_n_pres(2), T2S_relations(2)
         real(dp) :: M1_output_matrix(7)
         real(dp) :: T1, p1, Tt1, pt1, cp1, a1, V1
@@ -89,7 +90,11 @@ module module_1
         T2S_relations = M1_total_to_static_relations(M1,T1,p1)
         Tt1 = T2S_relations(1)
         pt1 = T2S_relations(2)
-        cp1 = M1_pressure_coefficient()
+        if(present(cp1_in)) then
+            cp1 = cp1_in
+        else
+            cp1 = M1_pressure_coefficient()
+        end if
 
         a1 = M1_speed_of_sound(T1,gamma_1,R_1)
         V1 = M1_flow_speed(M1,a1)

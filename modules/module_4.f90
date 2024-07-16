@@ -90,7 +90,7 @@ module module_4
         Ve = M1_flow_speed(Me,ae)
         me_dot = M4_exit_mass_flux(Te,pe,Ve,Area_e) * 1e3
 
-        delta_s3e = M3_entropy_increase(Tt3,Te,Tte,pt3,pte)
+        delta_s3e = M3_entropy_increase(Tt3,Te,Tte,pt3,pte,cpe)
         delta_s1e = delta_s13 + delta_s3e
 
         M4_output_matrix = [Me,pte,pe,Tte,Te,cpe,ae,Ve,me_dot, &
