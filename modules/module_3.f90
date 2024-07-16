@@ -97,11 +97,11 @@ module module_3
         Temp_n_pres = [T3,p3,pt3]
     end function M3_total_to_static_relations
 
-    function M3_entropy_increase(Tt2,T3,Tt3,pt2,pt3,cp3) result(delta_s23)
+    function M3_entropy_increase(Tt2,Tt3,pt2,pt3,cp3) result(delta_s23)
         ! Entropy increase from state 2 to 3, and state 3 to e
         implicit none
 
-        real(dp), intent(in) :: Tt2, T3, Tt3, pt2, pt3, cp3
+        real(dp), intent(in) :: Tt2, Tt3, pt2, pt3, cp3
         real(dp) :: delta_s23
 
         delta_s23 = cp3 * log(Tt3 / Tt2) - R_3 * log(pt3 / pt2)
@@ -144,7 +144,7 @@ module module_3
         a3 = M1_speed_of_sound(T3,gamma_3,R_3)
         V3 = M1_flow_speed(M3,a3)
 
-        delta_s23 = M3_entropy_increase(Tt2,T3,Tt3,pt2,pt3,cp3)
+        delta_s23 = M3_entropy_increase(Tt2,Tt3,pt2,pt3,cp3)
         delta_s13 = delta_s12 + delta_s23
 
         M3_output_matrix = [Tt3,M3,q23,T3,p3,pt3,cp3,delta_s23,delta_s13]
