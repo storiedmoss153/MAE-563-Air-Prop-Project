@@ -21,7 +21,7 @@ set ztics offset 0.5,0.5
 
 set colorbox user origin .85,.225 size .05,.55
 
-set view 60,60
+set view 60,70
 set ticslevel 0
 set pm3d border retrace
 set palette rgb 30,31,32
