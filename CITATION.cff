@@ -1,0 +1,15 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Ram/Scramjet Analysis Tool
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Stanley
+    family-names: Porembski
+    email: stanleywalker23@gmail.com
+repository-code: >-
+  https://github.com/storiedmoss153/MAE-563-Air-Prop-Project.git
