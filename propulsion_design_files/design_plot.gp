@@ -1,5 +1,5 @@
 # test_design_plot.gp
-set term pdf color enhanced font "Times,14" size 4,2.4375 # size 3.25,2.4375
+set term pdf color enhanced font "Times,14" size 4,2.4375
 set output 'propulsion_design_files/total_thrust_plot.pdf'
 set size .8125,1
 set origin .09375,0
