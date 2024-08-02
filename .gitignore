@@ -45,5 +45,6 @@
 ### GNUplot ###
 # Plots
 *.pdf
+*.png
 
 # End of https://www.toptal.com/developers/gitignore/api/fortran
