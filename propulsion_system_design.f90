@@ -26,11 +26,11 @@ program propulsion_system_design
     M1 = 5._dp
     M2_int = 0.01
     M2_max = 4.99
-    d_M2 = 0.001
+    d_M2 = 0.005
     Tt3_int = 1200
     Tt3_max = initial_parameters(6)
     Tt3_max = 2400
-    d_Tt3 = 10
+    d_Tt3 = 12
     eta_d = initial_parameters(3)
     qf = initial_parameters(5)
     eta_n = initial_parameters(7)
