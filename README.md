@@ -48,3 +48,11 @@ This code completes part I of the project which is the design of the propulsion 
 gfortran ./modules/universal_module.f90 ./modules/module_1.f90 ./modules/module_2.f90 ./modules/module_3.f90 ./modules/module_4.f90 ./modules/module_5.f90 ./modules/module_6.f90 ./modules/auxiliary_module.f90 propulsion_system_design.f90 -o propulsion_system_design.out
 ./propulsion_system_design.out
 ```
+### Mach Testing
+This code plots additional state properties for the propulsion system design to aid in conclusions drawn from the design. The plots created are M2 vs (M3,Me,M4), vs (p2,p3,pe), and vs (Tt3,Tte,Tt4).
+
+## Running mach_testing.f90
+```
+gfortran ./modules/universal_module.f90 ./modules/module_1.f90 ./modules/module_2.f90 ./modules/module_3.f90 ./modules/module_4.f90 ./modules/module_5.f90 ./modules/module_6.f90 ./modules/auxiliary_module.f90 mach_testing.f90 -o mach_testing.out
+./mach_testing.out
+```
