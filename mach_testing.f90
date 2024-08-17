@@ -33,10 +33,11 @@ program mach_testing
     call linspace(0._dp,5._dp,linspace_array)
     do i = 1,size(linspace_array)
         all_output_array = export_all_outputs(z,M1,eta_d,linspace_array(i),qf,Tt3_max,eta_n,Area_e)
-        write(unit, '(F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10)') &
-              linspace_array(i), all_output_array(3,2), all_output_array(4,1), &
-              all_output_array(5,1), all_output_array(3,1), all_output_array(2,4), &
-              all_output_array(4,3)
+        write(unit, '(F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10, ",", F20.10)') &
+              linspace_array(i), &
+              all_output_array(3,2), all_output_array(4,1), all_output_array(5,1), &
+              all_output_array(1,1), all_output_array(2,2), all_output_array(3,4), all_output_array(4,5), all_output_array(5,5), &
+              all_output_array(1,2), all_output_array(2,4), all_output_array(3,5), all_output_array(4,3), all_output_array(5,3)
     end do
     close(unit)
 
