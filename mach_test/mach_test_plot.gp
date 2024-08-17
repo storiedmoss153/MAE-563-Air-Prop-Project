@@ -64,6 +64,14 @@ set ylabel "Heat per Unit Mass, MJ/kg"
 plot './mach_test/mach_test_plot.csv' u 1:30 w l lw 2 lc rgb "black" dt 1 t 'q_{23}'
 set output
 
+set output './mach_test/mach_test_plot_sos.pdf'
+set ylabel "Speed of Sound, m/s"
+plot './mach_test/mach_test_plot.csv' u 1:36 w l lw 2 lc rgb "black" dt 1 t 'a_1',\
+     './mach_test/mach_test_plot.csv' u 1:37 w l lw 2 lc rgb "black" dt 2 t 'a_2',\
+     './mach_test/mach_test_plot.csv' u 1:38 w l lw 2 lc rgb "black" dt 3 t 'a_e',\
+     './mach_test/mach_test_plot.csv' u 1:39 w l lw 2 lc rgb "black" dt 4 t 'a_4'
+set output
+
 set term pdf dashed enhanced font "Times,15" size 5.375,2.4375
 
 set output './mach_test/mach_test_plot_temptot.pdf'
