@@ -72,6 +72,14 @@ plot './mach_test/mach_test_plot.csv' u 1:36 w l lw 2 lc rgb "black" dt 1 t 'a_1
      './mach_test/mach_test_plot.csv' u 1:39 w l lw 2 lc rgb "black" dt 4 t 'a_4'
 set output
 
+set output './mach_test/mach_test_plot_delent.pdf'
+set ylabel "Entropy Change, J/(kg-K)"
+plot './mach_test/mach_test_plot.csv' u 1:40 w l lw 2 lc rgb "black" dt 1 t '{/Symbol D}s_{12}',\
+     './mach_test/mach_test_plot.csv' u 1:41 w l lw 2 lc rgb "black" dt 2 t '{/Symbol D}s_{23}',\
+     './mach_test/mach_test_plot.csv' u 1:42 w l lw 2 lc rgb "black" dt 3 t '{/Symbol D}s_{3e}',\
+     './mach_test/mach_test_plot.csv' u 1:43 w l lw 2 lc rgb "black" dt 4 t '{/Symbol D}s_{e4}'
+set output
+
 set term pdf dashed enhanced font "Times,15" size 5.375,2.4375
 
 set output './mach_test/mach_test_plot_temptot.pdf'
