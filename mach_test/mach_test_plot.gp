@@ -80,17 +80,19 @@ plot './mach_test/mach_test_plot.csv' u 1:40 w l lw 2 lc rgb "black" dt 1 t '{/S
      './mach_test/mach_test_plot.csv' u 1:43 w l lw 2 lc rgb "black" dt 4 t '{/Symbol D}s_{e4}'
 set output
 
-set term pdf dashed enhanced font "Times,15" size 5.375,2.4375
-
-set output './mach_test/mach_test_plot_temptot.pdf'
-set ylabel "Total Temperature, K"
-plot './mach_test/mach_test_plot.csv' u 1:31 w l lw 2 lc rgb "black" dt 1 t 'T_{t1} = T_{t2}',\
-     './mach_test/mach_test_plot.csv' u 1:32 w l lw 2 lc rgb "black" dt 2 t 'T_{t3} = T_{te} = T_{t4}'
-set output
+set term pdf dashed enhanced font "Times,15" size 5,2.4375
 
 set output './mach_test/mach_test_plot_presstat.pdf'
 set ylabel "Static Pressure, kPa"
 plot './mach_test/mach_test_plot.csv' u 1:33 w l lw 2 lc rgb "black" dt 1 t 'p_1 = p_4',\
      './mach_test/mach_test_plot.csv' u 1:34 w l lw 2 lc rgb "black" dt 2 t 'p_2 = p_3',\
      './mach_test/mach_test_plot.csv' u 1:35 w l lw 2 lc rgb "black" dt 3 t 'p_e'
+set output
+
+set term pdf dashed enhanced font "Times,15" size 5.375,2.4375
+
+set output './mach_test/mach_test_plot_temptot.pdf'
+set ylabel "Total Temperature, K"
+plot './mach_test/mach_test_plot.csv' u 1:31 w l lw 2 lc rgb "black" dt 1 t 'T_{t1} = T_{t2}',\
+     './mach_test/mach_test_plot.csv' u 1:32 w l lw 2 lc rgb "black" dt 2 t 'T_{t3} = T_{te} = T_{t4}'
 set output
