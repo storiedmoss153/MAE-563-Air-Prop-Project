@@ -80,7 +80,7 @@ plot './mach_test/mach_test_plot.csv' u 1:40 w l lw 2 lc rgb "black" dt 1 t '{/S
      './mach_test/mach_test_plot.csv' u 1:43 w l lw 2 lc rgb "black" dt 4 t '{/Symbol D}s_{e4}'
 set output
 
-set term pdf dashed enhanced font "Times,15" size 5,2.4375
+set term pdf dashed enhanced font "Times,15" size 4.625,2.4375
 
 set output './mach_test/mach_test_plot_presstat.pdf'
 set ylabel "Static Pressure, kPa"
