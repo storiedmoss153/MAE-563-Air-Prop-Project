@@ -13,6 +13,7 @@
 
 # Data Files
 *.csv
+*.csv#
 !input_variables_case7.csv
 !input_variables_case7.csv
 !ICAO_Standard_Atmosphere_English_units.csv
