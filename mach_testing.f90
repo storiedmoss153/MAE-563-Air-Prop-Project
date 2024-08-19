@@ -21,10 +21,8 @@ program mach_testing
     call read_initial_parameters(filename,initial_parameters)
 
     ! Initialize variables to be used in calculations
-    ! z  = initial_parameters(1)
-    z = 4300
-    ! M1 = initial_parameters(2)
-    M1 = 2.4
+    z  = initial_parameters(1)
+    M1 = initial_parameters(2)
     eta_d = initial_parameters(3)
     M2 = initial_parameters(4)
     qf = initial_parameters(5)
@@ -34,13 +32,13 @@ program mach_testing
 
     filename = './mach_test/mach_test_plot.csv'
     open (newunit=unit, file=filename, status='replace', action='write')
-    call linspace(0.8_dp,5._dp,linspace_array)
+    call linspace(2000._dp,30000._dp,linspace_array)
     str = repeat(trim(', ",", F20.10'), 42)
     str2 = '(F20.10'//str//')'
     do i = 1,size(linspace_array)
-        all_output_array = export_all_outputs(z,linspace_array(i),eta_d,M2,qf,Tt3_max,eta_n,Area_e)
+        all_output_array = export_all_outputs(linspace_array(i),M1,eta_d,M2,qf,Tt3_max,eta_n,Area_e)
         write(unit, str2) &
-              linspace_array(i), &
+              linspace_array(i)/1000, &
               all_output_array(3,2), all_output_array(4,1), all_output_array(5,1), &
               all_output_array(1,1), all_output_array(2,2), all_output_array(3,4), all_output_array(4,5), all_output_array(5,5), &
               all_output_array(1,4), all_output_array(2,3), all_output_array(3,6), all_output_array(4,2), all_output_array(5,2), &
