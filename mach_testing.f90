@@ -40,7 +40,7 @@ program mach_testing
     do i = 1,size(linspace_array)
         all_output_array = export_all_outputs(z,M1,linspace_array(i),M2,qf,Tt3_max,eta_n,Area_e)
         write(unit, str2) &
-              linspace_array(i)/1000, &
+              linspace_array(i), &
               all_output_array(3,2), all_output_array(4,1), all_output_array(5,1), &
               all_output_array(1,1), all_output_array(2,2), all_output_array(3,4), all_output_array(4,5), all_output_array(5,5), &
               all_output_array(1,4), all_output_array(2,3), all_output_array(3,6), all_output_array(4,2), all_output_array(5,2), &
