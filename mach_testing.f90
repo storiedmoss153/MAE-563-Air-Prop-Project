@@ -12,7 +12,7 @@ program mach_testing
     real(dp) :: initial_parameters(8)
     real(dp) :: z, M1, eta_d, M2, qf, Tt3_max, eta_n, Area_e
 
-    n = (1.0-0.5)/0.05
+    n = 1 + (1.0-0.5)/0.05
     ! n = 1000
     allocate(linspace_array(n), all_output_array(n,4))
 
@@ -34,7 +34,7 @@ program mach_testing
 
     filename = './mach_test/mach_test_plot.csv'
     open (newunit=unit, file=filename, status='replace', action='write')
-    call linspace(1._dp,.5_dp,linspace_array)
+    call linspace(.5_dp,1._dp,linspace_array)
     str = repeat(trim(', ",", F20.10'), 42)
     str2 = '(F20.10'//str//')'
     do i = 1,size(linspace_array)
