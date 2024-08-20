@@ -12,7 +12,7 @@ program mach_testing
     real(dp) :: initial_parameters(8)
     real(dp) :: z, M1, eta_d, M2, qf, Tt3_max, eta_n, Area_e
 
-    n = 1 + (1.0-0.5)/0.05
+    n = 1 + (2.5-0.1)/0.1
     ! n = 1000
     allocate(linspace_array(n), all_output_array(n,4))
 
@@ -34,11 +34,11 @@ program mach_testing
 
     filename = './mach_test/mach_test_plot.csv'
     open (newunit=unit, file=filename, status='replace', action='write')
-    call linspace(.5_dp,1._dp,linspace_array)
-    str = repeat(trim(', ",", F20.10'), 42)
+    call linspace(.1_dp,2.5_dp,linspace_array)
+    str = repeat(trim(', ",", F20.10'), 43)
     str2 = '(F20.10'//str//')'
     do i = 1,size(linspace_array)
-        all_output_array = export_all_outputs(z,M1,linspace_array(i),M2,qf,Tt3_max,eta_n,Area_e)
+        all_output_array = export_all_outputs(z,M1,eta_d,linspace_array(i),qf,Tt3_max,eta_n,Area_e)
         write(unit, str2) &
               linspace_array(i), &
               all_output_array(3,2), all_output_array(4,1), all_output_array(5,1), &
@@ -52,7 +52,8 @@ program mach_testing
               all_output_array(1,3), all_output_array(3,1), &
               all_output_array(1,2), all_output_array(2,4), all_output_array(4,3), &
               all_output_array(1,6), all_output_array(2,6), all_output_array(4,7), all_output_array(5,7), &
-              all_output_array(2,8), all_output_array(3,8), all_output_array(4,10), all_output_array(5,9)
+              all_output_array(2,8), all_output_array(3,8), all_output_array(4,10), all_output_array(5,9), &
+              all_output_array(6,8)
     end do
     close(unit)
 

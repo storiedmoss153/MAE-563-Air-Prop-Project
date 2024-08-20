@@ -10,7 +10,7 @@ set output
 
 set output './performance_parameter_files/part_g_T.pdf'
 set ylabel "Total Thrust, kN"
-set format y '%.0s'
+set format y '%.1s'
 plot './performance_parameter_files/part_g_data.csv' u 1:3 w l lw 2 lc rgb "black" dt 1
 set output
 unset format y
