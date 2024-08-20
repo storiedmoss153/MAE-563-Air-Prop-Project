@@ -12,8 +12,8 @@ program mach_testing
     real(dp) :: initial_parameters(8)
     real(dp) :: z, M1, eta_d, M2, qf, Tt3_max, eta_n, Area_e
 
-    ! n = (2.5-0.1)/0.1
-    n = 1000
+    n = (1.0-0.5)/0.05
+    ! n = 1000
     allocate(linspace_array(n), all_output_array(n,4))
 
     casenum = 7
@@ -21,8 +21,10 @@ program mach_testing
     call read_initial_parameters(filename,initial_parameters)
 
     ! Initialize variables to be used in calculations
-    z  = initial_parameters(1)
-    M1 = initial_parameters(2)
+    ! z  = initial_parameters(1)
+    z = 4300
+    ! M1 = initial_parameters(2)
+    M1 = 2.4
     eta_d = initial_parameters(3)
     M2 = initial_parameters(4)
     qf = initial_parameters(5)
@@ -32,11 +34,11 @@ program mach_testing
 
     filename = './mach_test/mach_test_plot.csv'
     open (newunit=unit, file=filename, status='replace', action='write')
-    call linspace(2000._dp,30000._dp,linspace_array)
+    call linspace(1._dp,.5_dp,linspace_array)
     str = repeat(trim(', ",", F20.10'), 42)
     str2 = '(F20.10'//str//')'
     do i = 1,size(linspace_array)
-        all_output_array = export_all_outputs(linspace_array(i),M1,eta_d,M2,qf,Tt3_max,eta_n,Area_e)
+        all_output_array = export_all_outputs(z,M1,linspace_array(i),M2,qf,Tt3_max,eta_n,Area_e)
         write(unit, str2) &
               linspace_array(i)/1000, &
               all_output_array(3,2), all_output_array(4,1), all_output_array(5,1), &
