@@ -3,6 +3,7 @@ set term pdf dashed enhanced font "Times,15" size 3.25,2.4375
 set output './performance_parameter_files/part_e_range_1_5.pdf'
 set key box
 set format x '%.0s'
+set format y '%.1f'
 set xlabel "Flight Altitude, km"
 set ylabel "Flight Mach Number"
 set grid
