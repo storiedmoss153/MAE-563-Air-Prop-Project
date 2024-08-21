@@ -1,13 +1,12 @@
 # part_h_plot.gp
 set term pdf dashed enhanced font "Times,15" size 3.25,2.4375
+set datafile separator ","
 set output './performance_parameter_files/part_h_eta_o.pdf'
 unset key
 set xlabel "Combustor Inlet Mach"
 set ylabel "Overall Efficiency"
 set grid
-set datafile separator ","
-plot "<awk '{if(($2) != \"********************\") print} ' ./performance_parameter_files/part_h_data.csv" \
-u ($1):($2)  w l lw 2 lc rgb "black" dt 1
+plot './performance_parameter_files/part_h_data.csv' u 1:($2) w l lw 2 lc rgb "black" dt 1
 set output
 
 set output './performance_parameter_files/part_h_T.pdf'

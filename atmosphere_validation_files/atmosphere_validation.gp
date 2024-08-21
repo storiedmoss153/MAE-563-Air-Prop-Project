@@ -1,6 +1,7 @@
 # atmosphere_validation.gp
 set term pdf dashed enhanced font "Times,15" size 3.25,2.4375
 set key box t r w -1 h .5 font "Times,13"
+set datafile separator ","
 set grid
 set format y '%.0s'
 set ylabel 'Altitude, km'

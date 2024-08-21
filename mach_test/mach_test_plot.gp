@@ -1,7 +1,7 @@
 # mach_test_plot.gp
 set term pdf dashed enhanced font "Times,15" size 4.25,2.4375
 set key outside box w 1 h 1 # font "Times,13"
-set datafile missing "********************"
+set datafile separator ","
 set output './mach_test/mach_test_plot_mach.pdf'
 set xlabel "Combustor Inlet Mach"
 set ylabel "Mach Number"
@@ -46,11 +46,9 @@ set output
 set output './mach_test/mach_test_plot_dimless.pdf'
 set ylabel "Efficiency and Fuel-Air Mass Ratio"
 plot './mach_test/mach_test_plot.csv' u 1:21 w l lw 2 lc rgb "black" dt 1 t 'f',\
-     './mach_test/mach_test_plot.csv' u 1:22 w l lw 2 lc rgb "black" dt 2 t '{/Symbol h}_{th}',\
-     # "<awk '{if(($22) != \"********************\") print} ' ./mach_test_mach_test_plot.csv" u 1:22 w l lw 2 lc rgb "black" dt 2 t '{/Symbol h}_{th}',\
+     './mach_test/mach_test_plot.csv' u 1:($22) w l lw 2 lc rgb "black" dt 2 t '{/Symbol h}_{th}',\
      './mach_test/mach_test_plot.csv' u 1:23 w l lw 2 lc rgb "black" dt 3 t '{/Symbol h}_p',\
-     './mach_test/mach_test_plot.csv' u 1:24 w l lw 2 lc rgb "black" dt 4 t '{/Symbol h}_o'
-     # "<awk '{if(($24) != \"********************\") print} ' ./mach_test_mach_test_plot.csv" u 1:24 w l lw 2 lc rgb "black" dt r t '{/Symbol h}_o'
+     './mach_test/mach_test_plot.csv' u 1:($24) w l lw 2 lc rgb "black" dt 4 t '{/Symbol h}_o'
 set output
 
 set output './mach_test/mach_test_plot_velo.pdf'

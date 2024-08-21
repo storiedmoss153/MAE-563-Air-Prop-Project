@@ -1,5 +1,6 @@
 # part_f_plot.gp
 set term pdf dashed enhanced font "Times,15" size 3.25,2.4375
+set datafile separator ","
 set output './performance_parameter_files/part_f_eta_o.pdf'
 unset key
 set xlabel "Inlet/Diffuser Efficiency"

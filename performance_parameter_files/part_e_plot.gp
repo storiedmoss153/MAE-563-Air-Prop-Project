@@ -1,5 +1,6 @@
 # part_e_plot.gp
 set term pdf dashed enhanced font "Times,15" size 3.25,2.4375
+set datafile separator ","
 set output './performance_parameter_files/part_e_range_1_5.pdf'
 set key box
 set format x '%.0s'
