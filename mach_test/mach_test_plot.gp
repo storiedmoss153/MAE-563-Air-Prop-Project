@@ -2,7 +2,7 @@
 set term pdf dashed enhanced font "Times,15" size 4.25,2.4375
 set key outside box w 1 h 1 # font "Times,13"
 set output './mach_test/mach_test_plot_mach.pdf'
-set xlabel "Inlet/Diffuser Efficiency"
+set xlabel "Combustor Inlet Mach"
 set ylabel "Mach Number"
 set grid
 plot './mach_test/mach_test_plot.csv' u 1:2 w l lw 2 lc rgb "black" dt 1 t 'M_3',\

@@ -51,7 +51,7 @@ gfortran ./modules/universal_module.f90 ./modules/module_1.f90 ./modules/module_
 ./propulsion_system_design.out
 ```
 ### Mach Testing
-This code plots additional state properties for the propulsion system design to aid in conclusions drawn from the design. The plots created are M2 vs (M3,Me,M4), vs (p2,p3,pe), and vs (Tt3,Tte,Tt4).
+This code plots additional state properties for the propulsion system design to aid in conclusions drawn from the design.
 
 ## Running mach_testing.f90
 ```
