@@ -29,7 +29,7 @@ splot 'propulsion_design_files/design_data_1.csv' u 2:1:3 w pm3d, \
       'propulsion_design_files/design_data_2.csv' u 2:1:3 w l lc rgb "black"
 set output
 set cbtics format
-unset format z
+set format z '%.1f'
 
 set output 'propulsion_design_files/eta_o_plot.pdf'
 set zrange [-2.5:.5]
