@@ -42,8 +42,8 @@ program TS_diagram_plotting
     write(filename, '(A, I0, A)') './TS_plot_files/case',&
           case_num,'_TS_12_data.csv'
     open (newunit=unit, file=filename, status='replace', action='write')
-    write(unit, '(F20.10, ",", F20.10)') 0._dp, T1
-    write(unit, '(F20.10, ",", F20.10)') delta_s12, T2
+    write(unit, '(*(F20.10, ","))') 0._dp, T1
+    write(unit, '(*(F20.10, ","))') delta_s12, T2
     close(unit)
 
     ! write state data from 2 to 3
@@ -53,7 +53,7 @@ program TS_diagram_plotting
     ds = (delta_s13 - delta_s12) / (num - 1)
     T = T2
     s = delta_s12
-    write(unit, '(F20.10, ",", F20.10)') s, T
+    write(unit, '(*(F20.10, ","))') s, T
     do i = 1,num
         dT = (T / M3_pressure_coefficient(T)) * ds
         T = T + dT
@@ -65,35 +65,35 @@ program TS_diagram_plotting
     T = T2
     ds2 = ds * (num - 1) / (num_fin - 1)
     do i =1,num_fin
-        write(unit, '(F20.10, ",", F20.10)') s, T
+        write(unit, '(*(F20.10, ","))') s, T
         dT = (T / M3_pressure_coefficient(T)) * ds
         s = s + ds2
         T = T + dT
     end do
-    write(unit, '(F20.10, ",", F20.10)') delta_s13, T3
+    write(unit, '(*(F20.10, ","))') delta_s13, T3
     close(unit)
 
     ! write state data from 3 to e
     write(filename, '(A, I0, A)') './TS_plot_files/case',&
           case_num,'_TS_3e_data.csv'
     open (newunit=unit, file=filename, status='replace', action='write')
-    write(unit, '(F20.10, ",", F20.10)') delta_s13, T3
-    write(unit, '(F20.10, ",", F20.10)') delta_s1e, Te
+    write(unit, '(*(F20.10, ","))') delta_s13, T3
+    write(unit, '(*(F20.10, ","))') delta_s1e, Te
     close(unit)
 
     ! write state data from e to 4
     write(filename, '(A, I0, A)') './TS_plot_files/case',&
           case_num,'_TS_e4_data.csv'
     open (newunit=unit, file=filename, status='replace', action='write')
-    write(unit, '(F20.10, ",", F20.10)') delta_s1e, Te
-    write(unit, '(F20.10, ",", F20.10)') delta_s14, T4
+    write(unit, '(*(F20.10, ","))') delta_s1e, Te
+    write(unit, '(*(F20.10, ","))') delta_s14, T4
     close(unit)
 
     ! write state data from 4 to 1
     write(filename, '(A, I0, A)') './TS_plot_files/case',&
           case_num,'_TS_41_data.csv'
     open (newunit=unit, file=filename, status='replace', action='write')
-    write(unit, '(F20.10, ",", F20.10)') delta_s14, T4
+    write(unit, '(*(F20.10, ","))') delta_s14, T4
     s = delta_s14
     T = T4
     ds = (delta_s14) / (num - 1)
@@ -108,12 +108,12 @@ program TS_diagram_plotting
     T = T4
     ds2 = ds * (num - 1) / (num_fin - 1)
     do i = 1, num_fin
-        write(unit, '(F20.10, ",", F20.10)') s, T
+        write(unit, '(*(F20.10, ","))') s, T
         dT = (T / M1_pressure_coefficient()) * ds
         s = s - ds2
         T = T - dT
     end do
-    write(unit, '(F20.10, ",", F20.10)') 0._dp, T1
+    write(unit, '(*(F20.10, ","))') 0._dp, T1
     close(unit)
 
     ! execute the plotting of the TS diagram

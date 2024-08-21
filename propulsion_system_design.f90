@@ -94,8 +94,7 @@ program propulsion_system_design
 
             design_array_1(j + n_Tt3 * (i-1),:) = [M2,Tt3,total_thrust,eta_o]
 
-            write(io1,"(F20.10, ',', F20.10, ',', F20.10, ',', F20.10)")&
-                  M2, Tt3, total_thrust, eta_o
+            write(io1,"(*(F20.10,','))") M2, Tt3, total_thrust, eta_o
 
             Tt3 = Tt3 + d_Tt3
         end do
@@ -123,12 +122,11 @@ program propulsion_system_design
             ! Calculations from Module 6
             allocate(dummy_array(13))
             dummy_array = M6_all_function(q23,qf,me_dot,Ve,V1,pe,p1,p1,Area_e)
-            total_thrust = dummy_array(6)                            ! N
+            total_thrust = dummy_array(6)                               ! N
             eta_o = dummy_array(12)
             deallocate(dummy_array)
         end do
-        write(io2,"(F20.10, ',', F20.10, ',', F20.10, ',', F20.10)")&
-                M2, Tt3, total_thrust, eta_o
+        write(io2,"(*(F20.10,','))") M2, Tt3, total_thrust, eta_o
         write(io1,*)
     end do
     close(io1)

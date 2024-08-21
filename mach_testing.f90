@@ -35,11 +35,9 @@ program mach_testing
     filename = './mach_test/mach_test_plot.csv'
     open (newunit=unit, file=filename, status='replace', action='write')
     call linspace(.1_dp,2.5_dp,linspace_array)
-    str = repeat(trim(', ",", F20.10'), 43)
-    str2 = '(F20.10'//str//')'
     do i = 1,size(linspace_array)
         all_output_array = export_all_outputs(z,M1,eta_d,linspace_array(i),qf,Tt3_max,eta_n,Area_e)
-        write(unit, str2) &
+        write(unit, '(*(F20.10,","))') &
               linspace_array(i), &
               all_output_array(3,2), all_output_array(4,1), all_output_array(5,1), &
               all_output_array(1,1), all_output_array(2,2), all_output_array(3,4), all_output_array(4,5), all_output_array(5,5), &
@@ -56,6 +54,8 @@ program mach_testing
               all_output_array(6,8)
     end do
     close(unit)
+
+
 
     call execute_command_line('gnuplot ./mach_test/mach_test_plot.gp')
 
