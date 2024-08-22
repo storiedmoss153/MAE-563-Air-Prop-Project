@@ -18,5 +18,6 @@ unset format y
 
 set output './performance_parameter_files/part_h_TSFC.pdf'
 set ylabel "TSFC, (kg/hr)/N"
-plot './performance_parameter_files/part_h_data.csv' u 1:4 w l lw 2 lc rgb "black" dt 1
+plot './performance_parameter_files/part_h_data.csv' ev ::::5 u 1:4 w l lw 2 lc rgb "black" dt 1,\
+     './performance_parameter_files/part_h_data.csv' ev ::6 u 1:4 w l lw 2 lc rgb "black" dt 1
 set output

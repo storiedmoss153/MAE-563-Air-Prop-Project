@@ -81,6 +81,12 @@ plot './mach_test/mach_test_plot.csv' u 1:40 w l lw 2 lc rgb "black" dt 1 t '{/S
      './mach_test/mach_test_plot.csv' u 1:43 w l lw 2 lc rgb "black" dt 4 t '{/Symbol D}s_{e4}'
 set output
 
+set output './mach_test/mach_test_TSFC.pdf'
+set ylabel "TSFC, (kg/hr)/N"
+plot './mach_test/mach_test_plot.csv' ev ::::5 u 1:44 w l lw 2 lc rgb "black" dt 1 t 'TSFC',\
+     './mach_test/mach_test_plot.csv' ev ::6 u 1:44 w l lw 2 lc rgb "black" dt 1 t 'TSFC'
+set output
+
 set term pdf dashed enhanced font "Times,15" size 4.625,2.4375
 
 set output './mach_test/mach_test_plot_presstat.pdf'
