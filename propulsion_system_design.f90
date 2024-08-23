@@ -22,10 +22,10 @@ program propulsion_system_design
     call read_initial_parameters(filename,initial_parameters)
 
     ! Initialize variables to be used in calculations
-    z = 27400._dp
-    M1 = 5._dp
+    z = 27400
+    M1 = 5
     M2_int = 0.01
-    M2_max = 4.99
+    M2_max = 5
     d_M2 = 0.005
     Tt3_int = 1200
     Tt3_max = initial_parameters(6)
@@ -36,7 +36,7 @@ program propulsion_system_design
     eta_n = initial_parameters(7)
     Area_e = initial_parameters(8)
 
-    n_M2 = int((M2_max - M2_int) / d_M2 + 2)
+    n_M2 = int((M2_max - M2_int) / d_M2 + 1)
     n_Tt3 = int((Tt3_max - Tt3_int) / d_Tt3 + 1)
     allocate(design_array_1(n_M2*n_Tt3,4))
 
